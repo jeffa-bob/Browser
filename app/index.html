@@ -8,5 +8,18 @@
 </head>
 <body>
   webapp
+  <script>
+    var isInStandaloneMode = (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator
+      .standalone);
+
+    if (isInStandaloneMode) {
+      console.log("webapp is installed");
+
+    } else{
+      console.log("webapp not is installed");
+      window.location.replace("./web/index.html");
+
+    }
+</script>
 </body>
 </html>

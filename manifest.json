@@ -4,6 +4,9 @@
   "start_url": "./app/",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "A browser."
-  
+  "description": "A browser.",
+  "icons": [{
+    "src": "./app/icon.svg",
+    "type": "image/svg"
+  }]
 }
