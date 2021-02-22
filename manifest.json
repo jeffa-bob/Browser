@@ -7,7 +7,6 @@
   "description": "A browser.",
   "icons": [{
     "src": "./app/icon.svg",
-    "sizes": "any",
-    "type": "image/svg"
+    "sizes": "any"
   }]
 }
