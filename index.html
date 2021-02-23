@@ -11,18 +11,32 @@
 
 <body>
   <script>
-      var isInStandaloneMode = (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator
-        .standalone);
+    const isInStandaloneMode = (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator
+      .standalone);
 
-      if (isInStandaloneMode) {
-        console.log("webapp is installed");
-        // window.location.replace("./app/index.html");
+    if (isInStandaloneMode) {
+      console.log("webapp is installed");
+      window.location.replace("./app/index.html");
 
-      } else{
-        console.log("webapp not is installed");
-        // window.location.replace("./web/index.html");
+    } else {
+      console.log("webapp not is installed");
+      // window.location.replace("./web/index.html");
 
-      }
+    }
+
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./service-worker.js', {
+        scope: '.' 
+    }).then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
   </script>
 </body>
 
